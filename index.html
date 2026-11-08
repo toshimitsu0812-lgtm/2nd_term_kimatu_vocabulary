@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>A3 2学期期末 英単語カード</title>
+<style>
+:root{--bg:#f5f2eb;--c:#fff;--t:#2b2b2b;--a:#c85a1a;--m:#777;--ok:#2e8b57;--ng:#c0392b;--b:#e2dccd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1b18;--c:#2a2723;--t:#eee;--m:#aaa;--b:#40392f}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.5 "Hiragino Sans","Noto Sans JP",sans-serif}
+#app{max-width:640px;margin:0 auto;padding:14px}
+h1{font-size:19px;margin:4px 0}.sub{color:var(--m);font-size:13px}
+.box{background:var(--c);border:1px solid var(--b);border-radius:14px;padding:14px;margin:12px 0}
+.st{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.st span{width:36px;height:36px;border-radius:50%;border:2px dashed var(--b);display:grid;place-items:center;font-size:11px;color:var(--m)}
+.st span.on{background:var(--a);border:2px solid var(--a);color:#fff;font-weight:700}
+.st span.on.x{background:var(--ok);border-color:var(--ok)}
+button{font:inherit;cursor:pointer;border:1px solid var(--b);background:var(--c);color:var(--t);border-radius:10px;padding:10px 14px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.modes button{text-align:left;padding:12px}.modes b{display:block}.modes small{color:var(--m)}
+.modes button.w{grid-column:1/-1}
+.grid{display:flex;flex-wrap:wrap;gap:5px}
+.c{font-size:12px;padding:3px 7px;border-radius:8px;border:1px solid var(--b);background:var(--bg)}
+.c i{font-style:normal;margin-left:4px;font-weight:700}
+.l1{background:#fbe3cf}.l2{background:#f3b98c}.l3{background:var(--ok);color:#fff;border-color:var(--ok)}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--m)}
+.card{background:var(--c);border:1px solid var(--b);border-radius:18px;padding:22px 16px;margin:12px 0;text-align:center}
+.big{font-size:32px;font-weight:700;margin:6px 0 10px;word-break:break-word}
+.s{color:var(--ng)}.acc{font-size:20px;font-weight:700;margin:4px 0}
+.cnt{font-size:12px;color:var(--m)}
+.pri{background:var(--a);color:#fff;border-color:var(--a)}
+.go{background:var(--ok);color:#fff;border-color:var(--ok)}.no{background:var(--ng);color:#fff;border-color:var(--ng)}
+.opt{display:block;width:100%;margin:8px 0;text-align:left}
+.row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+input{font:inherit;font-size:20px;width:90%;padding:10px;border-radius:10px;border:2px solid var(--b);background:var(--bg);color:var(--t);text-align:center}
+.pt{color:var(--a);font-weight:700;margin-top:6px}.ja{color:var(--m);font-size:14px}
+.fb{font-size:18px;font-weight:700;margin-top:10px}
+.bar{display:flex;height:24px;border-radius:12px;overflow:hidden;background:var(--b);margin:8px 0}.bar i{display:block;height:100%}
+.sm{padding:8px 12px;font-size:14px}.sm:disabled{opacity:.4}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{border-bottom:1px solid var(--b);padding:5px;text-align:left;vertical-align:top}
+textarea{width:100%;box-sizing:border-box;min-height:70px;font:12px monospace;background:var(--bg);color:var(--t);border:2px solid var(--b);border-radius:10px;padding:8px;margin-top:8px}
+.lk{background:none;border:none;color:var(--m);text-decoration:underline;font-size:12px}
+</style></head><body><div id="app"></div>
+<script>
+const D=`translate|trans-LATE|動|翻訳する|Please translate this into English.|これを英語に翻訳してください。|translate A into B「AをBに翻訳する」
+translation|trans-LA-tion|名|翻訳|I read the translation.||
+unique|u-NIQUE|形|独特な|She has a unique style.||
+phrase||名|言い回し、表現|I learned a new phrase.||
+What about ...?|What a-BOUT ...?|連|…はどうですか。|What about this one?|これはどうですか。|What about + 名詞 / ~ing?「…はどうですか」
+exact|ex-ACT|形|正確な|I need the exact time.||
+replace|re-PLACE|動|取りかえる|Replace the old battery with a new one.|古い電池を新しいものと取りかえて。|replace A with B「AをBと取りかえる」
+architect|AR-chi-tect|名|建築家|My uncle is an architect.||
+translator|trans-LA-tor|名|翻訳者|The translator is skilled.||
+deal|deal|動|〔deal with ...で〕…に対処する|How do you deal with stress?|あなたはストレスにどう対処しますか。|deal with + 名詞「…に対処する」
+Nodame Cantabile|No-da-me Can-TA-bi-le|名|のだめカンタービレ|I like Nodame Cantabile.||
+reader|READ-er|名|読者|She is a fast reader.||
+unfamiliar|un-fa-MIL-iar|形|よく知らない|I’m unfamiliar with this word.|この単語はよく知りません。|be unfamiliar with ...「…をよく知らない」
+explanation|ex-pla-NA-tion|名|説明|Thank you for the explanation.|説明をありがとう。|Thank you for + 名詞 / ~ing「…をありがとう」
+costume|COS-tume|名|衣装|I made my own costume.||
+sleeve||名|そで|The sleeves are too long.||
+strip||名|コマ漫画|I drew a comic strip.||
+be able to ...|be A-ble to ...|連|…することができる|She is able to speak English.|彼女は英語を話せます。|be able to V「〜できる」
+someone|SOME-one|代|だれか|Someone is at the door.||
+contact|CON-tact|動|連絡をとる|Please contact me.|私に連絡してください。|contact + 人(前置詞不要)「〜に連絡する」
+below|be-LOW|副|下(の方)に〔の〕|See the picture below.||
+tonight|to-NIGHT|副|今夜(は)|I’m busy tonight.||
+addiction|ad-DIC-tion|名|中毒|Game addiction is a problem.||
+apparent|a-PAR-ent|形|明らかな|The reason is apparent.||
+behavior|be-HAV-ior|名|ふるまい、態度|Her behavior was kind.||
+dependence|de-PEN-dence|名|依存|Our dependence on phones is growing.|私たちのスマホへの依存が増えています。|dependence on ...「…への依存」
+interaction|in-ter-AC-tion|名|交流|I have a lot of interaction with my classmates.|私はクラスメートとたくさん交流があります。|have interaction with ...「…と交流がある」
+face-to-face|face-to-FACE|副|対面して|Let’s talk face-to-face.||
+device|de-VICE|名|装置|I use this device daily.||
+dad||名|(お)父さん|My dad cooks well.||
+promise|PROM-ise|動|約束する|I promise to come.|来ると約束します。|promise to V「〜すると約束する」
+fair||形|公平な|That’s not fair.||
+ladle|LA-dle|名|おたま|Use a ladle for the soup.||
+flea||名|ノミ|The dog has fleas.||
+flea market|FLEA MAR-ket|名|ノミの市、フリーマーケット|We went to a flea market.||
+cutlet|CUT-let|名|カツレツ|I had a pork cutlet.||
+left-handed|left-HAND-ed|形|左ききの|My sister is left-handed.||
+right-handed|right-HAND-ed|形|右ききの|I’m right-handed.||
+struggle|STRUG-gle|動|たたかう|I struggle with math.|数学で苦労しています。|struggle with ...「…に苦労する」
+I mean||連|つまりその|I mean, it’s too hard.|つまり、難しすぎるんです。|言い直し・補足の文頭表現
+left-handedness|left-HAND-ed-ness|名|左きき|Left-handedness is common.||
+be aware of ...|be a-WARE of ...|連|…に気づいている|I’m aware of the problem.|私はその問題に気づいています。|be aware of + 名詞「…に気づいている」
+egg-free|EGG-free|形|卵の入っていない|This is an egg-free cake.|これは卵なしのケーキです。|~-free「…を含まない」
+meat||名|肉|I don’t eat meat.||
+allergy|AL-ler-gy|名|アレルギー|I have an allergy to milk.|私は牛乳アレルギーです。|an allergy to ...「…アレルギー」
+What else ...?|What ELSE ...?|連|ほかに何かありますか。|What else do you need?||
+unfair|un-FAIR|形|不公平な|The rule is unfair.|そのルールは不公平です。|un-「反対」:fair → unfair
+treat||動|扱う|Treat everyone kindly.|みんなに親切に接しなさい。|treat + 人 + 副詞「…を〜に扱う」
+distribute|dis-TRIB-ute|動|分配する|Distribute the papers to everyone.|みんなにプリントを配ってください。|distribute A to B「AをBに分配する」
+seem||動|…のように見える|You seem tired.|疲れているように見えます。|seem + 形容詞「…のように見える」
+equally|E-qual-ly|副|平等に|Share it equally.||
+fairness|FAIR-ness|名|公平|Fairness is important.|公平さは大切です。|形容詞 + -ness → 名詞:fair → fairness
+resource|RE-source|名|資源|Water is a resource.||
+result|re-SULT|名|結果|The result was good.||
+middle|MID-dle|名|真ん中|Sit in the middle.|真ん中に座って。|in the middle「真ん中に」
+recognize|REC-og-nize|動|認識する|I recognize your voice.||
+achieve|a-CHIEVE|動|手に入れる、得る|She achieved her goal.||
+alarm|a-LARM|名|目覚まし時計|The alarm woke me up.||
+within|with-IN|前|…以内に|Come back within an hour.|1時間以内に戻って。|within + 期間「…以内に」
+hop||動|ぴょんととぶ|The rabbit hops.||
+might||助|…かもしれない|It might rain.|雨が降るかもしれません。|might + 動詞の原形「〜かもしれない」
+apartment|a-PART-ment|名|アパート|I live in an apartment.||
+otherwise|OTH-er-wise|副|もしそうでなければ|Hurry, otherwise you’ll be late.|急いで。さもないと遅れます。|otherwise「さもないと」
+annoying|an-NOY-ing|形|うるさい|The noise is annoying.||
+battery|BAT-ter-y|名|電池、バッテリー|The battery is dead.||
+last||動|続く|The movie lasts two hours.||
+although|al-THOUGH|接|…だけれども|Although it’s cold, I’m fine.|寒いけれど、大丈夫です。|although + 主語 + 動詞「…だけれども」
+backlight|BACK-light|名|バックライト|The backlight is bright.||
+dark||名|暗やみ|I’m afraid of the dark.|暗やみがこわいです。|the dark「暗やみ」(名詞用法)
+bedroom|BED-room|名|寝室|My bedroom is small.||
+sale||名|販売|The shoes are on sale.|その靴は販売中です。|on sale「販売中で」
+model|MOD-el|名|型|This is a new model.||
+compact|com-PACT|形|小型の|It’s a compact car.||
+function|FUNC-tion|名|機能|This phone has many functions.||`.split("\n").map(l=>{const[w,a,p,m,e,j,t]=l.split("|");return{w,a,p,m,e,j,t}});
+const GOAL=20,DAY=50;let S={r:[],w:{},d:{}};
+const tk=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const tdn=()=>(S.d||{})[tk()]||0;
+try{S=JSON.parse(localStorage.getItem("t74"))||S}catch(e){}
+const save=()=>{try{localStorage.setItem("t74",JSON.stringify(S))}catch(e){}};
+const app=document.getElementById("app"),st=i=>S.w[D[i].w]||{n:0,ok:0};
+const acc=a=>a.replace(/[A-Za-z]+/g,x=>x===x.toUpperCase()&&x!=="I"?`<b class="s">${x}</b>`:x);
+let V;const pv=()=>{const l=speechSynthesis.getVoices().filter(v=>/en[-_]US/i.test(v.lang));V=l.find(v=>/google/i.test(v.name))||l[0]};
+if("speechSynthesis" in window){pv();speechSynthesis.onvoiceschanged=pv}
+const say=t=>{if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(/\.\.\.|~/g,""));u.lang="en-US";if(V)u.voice=V;u.rate=.9;speechSynthesis.speak(u)};
+const sh=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+const norm=s=>s.toLowerCase().replace(/\.\.\.|[^a-z ]/g,"").replace(/\s+/g," ").trim();
+const rec=(i,ok)=>{const k=D[i].w,o=S.w[k]||(S.w[k]={n:0,ok:0});o.n++;if(ok)o.ok++;o.s=ok?(o.s||0)+1:0;S.d=S.d||{};S.d[tk()]=tdn()+1;save()};
+const mst=i=>(st(i).s||0)>=3,wk=i=>{const o=st(i);return o.n-o.ok>=1&&!mst(i)};
+const pick=(pool,n=10)=>pool.map(i=>[(st(i).ok-2*(st(i).n-st(i).ok))+Math.random()*3,i]).sort((a,b)=>a[0]-b[0]).slice(0,n).map(x=>x[1]);
+const MODES=[["read","① 読む・発音","音を聞いて、アクセントと意味を確認"],["choice","② 4択","英語を見て日本語を選ぶ"],["spell","③ 日→英(スペル)","日本語を見て英語を書く"],["e2j","④ 英→日","英語を見て意味を言う"],["star","⑤ ★英文を言う","単語を見て英文が言えるか"]];
+function home(){
+ const cl=Object.keys(S.d||{}).filter(k=>S.d[k]>=DAY).sort(),n=cl.length,tn=tdn(),tp=Math.min(100,Math.round(tn/DAY*100));
+ const nm=D.filter((_,i)=>mst(i)).length,nu=D.filter((_,i)=>!st(i).n).length,nl=D.length-nm-nu,pc=x=>Math.round(x/D.length*100),pm=pc(nm),pu=pc(nu),pl=100-pm-pu,nw=D.filter((_,i)=>wk(i)).length,WB=MODES.map(([k,t])=>`<button class="sm" ${nw?"":"disabled"} onclick="start('${k}',1)">${t}</button>`).join("");
+ const slots=Array.from({length:Math.max(GOAL,n)},(_,k)=>k<n?`<span class="on${k>=GOAL?" x":""}">${+cl[k].slice(5,7)}/${+cl[k].slice(8)}</span>`:`<span>${k+1}</span>`).join("");
+ const ms=MODES.map(([k,t,s],j)=>`<button class="${j==4?"w":""}" onclick="start('${k}')"><b>${t}</b><small>${s}</small></button>`).join("");
+ const g=D.map((d,i)=>{const o=st(i),lv=o.n==0?0:o.n<5?1:o.n<10?2:3;return`<span class="c l${lv}">${d.t?"★":""}${d.w}<i>${o.n}</i></span>`}).join("");
+ app.innerHTML=`<h1>A3:2学期期末 英単語カード (L5〜L6)</h1><div class="sub">12月のテストまでに ${GOAL}日 クリアしよう!(1日${DAY}語以上でクリア。どのモードでもOK)</div>
+ <div class="box"><b>📅 今日のノルマ:${tn} / ${DAY}語</b>${tn>=DAY?" ✅ クリア!":""}<div class="bar"><i style="width:${tp}%;background:var(--ok)"></i></div><div class="sub">どのモードでも、1日${DAY}語以上学習すればクリア(苦手練習もOK)</div></div>
+ <div class="box"><b>学習スタンプ:${n}日 / ${GOAL}日</b>${n>=GOAL?" 🎉 目標達成!":""}<div class="st">${slots}</div></div>
+ <div class="box"><b>覚えた単語の達成率</b> <span class="sub">(3回連続で正解すると「覚えた」)</span><div class="bar"><i style="width:${pm}%;background:var(--ok)"></i><i style="width:${pl}%;background:var(--a)"></i></div><div class="sub">🟩 覚えた ${nm}語 (${pm}%)　🟧 学習中 ${nl}語 (${pl}%)　⬜ 未学習 ${nu}語 (${pu}%)</div><div style="margin-top:6px"><b>未達成 ${100-pm}%</b> <span class="sub">(あと${D.length-nm}語)</span></div></div>
+ <div class="modes">${ms}</div>
+ <div class="box"><b>🔥 苦手だけ練習</b> <span class="sub">(間違えたことがあって、まだ覚えていない語:${nw}語。間違いの多い順に出ます)</span><div class="row" style="justify-content:flex-start">${WB}</div></div>
+ <div class="box"><b>単語ごとの学習回数</b><div class="sub">灰=未学習 / 薄橙=1〜4回 / 橙=5〜9回 / 緑=10回以上</div><div class="grid" style="margin-top:8px">${g}</div></div>`;
+}
+let Q;
+function start(m,w){let p=D.map((_,i)=>i).filter(i=>m!="star"||D[i].t);if(w){p=p.filter(wk).sort((a,b)=>(st(b).n-st(b).ok)-(st(a).n-st(a).ok));if(!p.length)return}else p=sh(p);Q={m,w,l:p,i:0,ok:0};show()}
+const ix=()=>Q.l[Q.i];
+const back=d=>`<div class="acc">${d.a?acc(d.a):d.w}</div><div>${d.p}・<b>${d.m}</b></div><div class="ja">${d.e}</div>`;
+const judge=`<div class="row"><button class="go" onclick="ans(1)">○ できた</button><button class="no" onclick="ans(0)">× まだ</button></div>`;
+function frame(inner){const d=D[ix()],o=st(ix());app.innerHTML=`<div class="top"><button onclick="home()">← もどる</button><span>${Q.i+1} / ${Q.l.length}　今日 ${tdn()}/${DAY}${tdn()>=DAY?" ✅":""}</span></div><div class="card">${inner}<div class="cnt" style="margin-top:14px">この単語の学習 ${o.n}回</div></div>`}
+function show(){
+ if(Q.i>=Q.l.length)return done();
+ const i=ix(),d=D[i],m=Q.m,spk=`<button onclick="say(D[${i}].w)">🔊 発音</button>`;
+ if(m=="read"){frame(`<div class="big">${d.w}</div>${spk}<div id="bk" hidden>${back(d)}<div class="row"><button onclick="say(D[${i}].e)">🔊 例文</button></div>${judge}</div><div class="row" id="rv"><button class="pri" onclick="rev()">アクセントと意味を見る</button></div>`);say(d.w)}
+ else if(m=="e2j"){frame(`<div class="sub">意味を言ってみよう</div><div class="big">${d.w}</div>${spk}<div id="bk" hidden><div class="acc" style="color:var(--a)">${d.m}</div><div class="sub">${d.p}</div>${judge}</div><div class="row" id="rv"><button class="pri" onclick="rev()">答えを見る</button></div>`)}
+ else if(m=="star"){frame(`<div class="sub">この単語を使って英文を言ってみよう</div><div class="big">${d.w}</div><div>${d.p}・${d.m}</div><div id="bk" hidden><div class="big" style="font-size:22px">${d.e}</div><div class="ja">${d.j}</div><div class="pt">★ ${d.t}</div><div class="row"><button onclick="say(D[${i}].e)">🔊 例文</button></div>${judge}</div><div class="row" id="rv"><button class="pri" onclick="rev()">答えを見る</button></div>`)}
+ else if(m=="choice"){const ds=sh(D.filter((x,k)=>k!=i&&x.m!=d.m)).sort((a,b)=>(b.p==d.p)-(a.p==d.p)).slice(0,3),op=sh([d,...ds]);
+  frame(`<div class="big">${d.w}</div>${spk}<div style="margin-top:10px" id="ops">${op.map(o=>`<button class="opt" onclick="chk(this,${o===d?1:0})">${o.m}</button>`).join("")}</div><div id="fb"></div>`);say(d.w)}
+ else{frame(`<div class="sub">英語で書こう(${d.p})</div><div class="big" style="font-size:24px">${d.m}</div><div class="sub">ヒント:${d.w[0]}…(${d.w.length}文字)</div><div style="margin-top:12px"><input id="in" autocomplete="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key=='Enter')sp()"></div><div class="row"><button class="pri" onclick="sp()">答えあわせ</button></div><div id="fb"></div>`);document.getElementById("in").focus()}
+}
+function rev(){document.getElementById("bk").hidden=false;document.getElementById("rv").hidden=true;if(Q.m=="read")say(D[ix()].w)}
+function ans(ok){rec(ix(),ok);Q.ok+=ok;Q.i++;show()}
+const nxt=`<div class="row"><button class="pri" onclick="Q.i++;show()">次へ →</button></div>`;
+function chk(b,ok){document.querySelectorAll(".opt").forEach(x=>x.disabled=true);rec(ix(),ok);Q.ok+=ok;b.style.background=ok?"var(--ok)":"var(--ng)";b.style.color="#fff";
+ document.getElementById("fb").innerHTML=(ok?`<div class="fb" style="color:var(--ok)">⭕ せいかい!</div>`:`<div class="fb" style="color:var(--ng)">❌ 答え:${D[ix()].m}</div>`)+nxt}
+function sp(){const d=D[ix()],v=document.getElementById("in");if(v.disabled)return;v.disabled=true;const ok=norm(v.value)==norm(d.w)?1:0;rec(ix(),ok);Q.ok+=ok;say(d.w);
+ document.getElementById("fb").innerHTML=(ok?`<div class="fb" style="color:var(--ok)">⭕ せいかい!</div>`:`<div class="fb" style="color:var(--ng)">❌ 答え:${d.w}</div>`)+`<div class="acc">${d.a?acc(d.a):""}</div>`+nxt}
+function done(){const tn=tdn();app.innerHTML=`<div class="card"><div class="big">${tn>=DAY?"🎉 今日のノルマ達成!":"おつかれさま!"}</div><div style="font-size:20px">${Q.ok} / ${Q.l.length} 問 できた</div><div class="box">今日の学習 <b>${tn} / ${DAY}語</b>${tn>=DAY?"(クリア!)":`(あと${DAY-tn}語)`}</div><div class="row"><button class="pri" onclick="start('${Q.m}'${Q.w?",1":""})">もう1回</button><button onclick="home()">ホームへ</button></div></div>`}
+home();
+</script></body></html>
